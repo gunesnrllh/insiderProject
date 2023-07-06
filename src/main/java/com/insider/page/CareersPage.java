@@ -54,10 +54,6 @@ public class CareersPage extends BasePages {
       linkElement.click();
       System.out.println("seeAllTeams element clicked");
 
-
-
-
-
   }
   public void goToQaTeam(){
       wait(5000);

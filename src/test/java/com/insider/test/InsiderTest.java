@@ -32,7 +32,7 @@ public class InsiderTest extends BaseTest {
         jobsPage.openDepartmentList();
         jobsPage.selectDepartment();
         jobsPage.checkJobs();
-        jobsPage.viewRoleHover();
+        jobsPage.viewRole();
         jobsPage.openJobAd();
         jobsPage.checkUrl();
 

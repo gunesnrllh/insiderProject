@@ -6,8 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
+import org.openqa.selenium.interactions.Actions;
 
 
 import java.util.ArrayList;
@@ -71,6 +70,21 @@ public class BasePages {
         WebElement element = driver.findElement(locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         wait(2000);
+    }
+    public void hoverElement(By locator){
+        WebElement element = driver.findElement(locator);
+        String hoverScript = "var event = new MouseEvent('mouseover', {"
+                + "    'view': window,"
+                + "    'bubbles': true,"
+                + "    'cancelable': true"
+                + "});"
+                + "arguments[0].dispatchEvent(event);";
+        ((JavascriptExecutor) driver).executeScript(hoverScript, element);
+
+    }
+    public void moveToElement (By locator) {
+        Actions actionProvider = new Actions(driver);
+        actionProvider.moveToElement(find(locator)).build().perform();
     }
 
 

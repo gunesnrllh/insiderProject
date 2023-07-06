@@ -19,7 +19,7 @@ public class JobsPage extends BasePages {
     By qaJobs= By.xpath("//span[text()='Quality Assurance']");
 
     By viewRoleBtn= By.xpath("(//a[text()='View Role'])[1]");
-    By roleTitle= By.xpath("(//p[@class='position-title font-weight-bold'])[1]");
+    By roleTitle= By.xpath("(//div[text()='Istanbul, Turkey'])[1]");
 
     public void openLocationList(){
         Assertions.assertTrue(locationList != null, "Element can not found");
@@ -67,14 +67,15 @@ public class JobsPage extends BasePages {
         checkURLContainsRepeat("jobs.lever.co/useinsider");
 
     }
-    public void hoverElement(By locator){
-        WebElement element = driver.findElement(locator);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).perform();
 
-    }
-    public void viewRoleHover(){
+
+    public void viewRole(){
+
+        wait(5000);
         hoverElement(roleTitle);
+        wait(2000);
+        click(viewRoleBtn);
+
     }
 
 
